@@ -143,7 +143,7 @@
 .About_nitBadge__LAz9w {
   position: absolute;
   bottom: -10px;
-  right: -20px;
+  right: clamp(-4px, calc(50% - 120px), -20px);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -154,6 +154,25 @@
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   font-size: 0.85rem;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+@media (max-width: 480px) {
+  .About_nitBadge__LAz9w {
+    right: 0;
+    bottom: -14px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .About_nitTitle__E3W8T {
+    font-size: 0.72rem;
+  }
+
+  .About_nitDeg__XbttD {
+    font-size: 0.65rem;
+  }
 }
 
 .About_nitTitle__E3W8T {

@@ -139,7 +139,7 @@
 .nitBadge {
   position: absolute;
   bottom: -10px;
-  right: -20px;
+  right: clamp(-4px, calc(50% - 120px), -20px);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -149,6 +149,25 @@
   padding: 8px 14px;
   backdrop-filter: blur(20px);
   font-size: 0.85rem;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+@media (max-width: 480px) {
+  .nitBadge {
+    right: 0;
+    bottom: -14px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .nitTitle {
+    font-size: 0.72rem;
+  }
+
+  .nitDeg {
+    font-size: 0.65rem;
+  }
 }
 
 .nitTitle {
