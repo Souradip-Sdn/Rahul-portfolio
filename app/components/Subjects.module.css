@@ -1,0 +1,157 @@
+.subjectsSection {
+  background: linear-gradient(180deg, #0f172a 0%, #0a0e1a 100%);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 36px 32px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-8px);
+}
+
+.card:hover .cardGlow {
+  opacity: 0.12;
+}
+
+/* Glow overlay */
+.cardGlow {
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subjectIcon {
+  font-size: 2rem;
+}
+
+.gradeBadge {
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.subjectTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.subjectDesc {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* Topics */
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.topic {
+  padding: 5px 12px;
+  border-radius: 50px;
+  border: 1px solid;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: transparent;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.topic:hover {
+  opacity: 1;
+}
+
+/* Learn More */
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.learnMore:hover {
+  gap: 12px;
+  border-bottom-color: currentColor;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 28px 22px;
+  }
+}

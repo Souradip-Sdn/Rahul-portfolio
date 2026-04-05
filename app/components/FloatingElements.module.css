@@ -1,0 +1,41 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Keep it above the base background but behind content */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.05);
+  font-family: 'Poppins', 'Times New Roman', math, sans-serif;
+  user-select: none;
+  animation: float-around 30s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji {
+  opacity: 0.15; /* Emojis are inherently colorful, so reduce their opacity individually to blend in */
+  filter: grayscale(100%) contrast(200%);
+}
+
+@keyframes float-around {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -40px) rotate(15deg);
+  }
+  66% {
+    transform: translate(-30px, 40px) rotate(-15deg);
+  }
+  100% {
+    transform: translate(15px, -20px) rotate(5deg);
+  }
+}

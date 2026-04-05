@@ -1,0 +1,154 @@
+.featuresSection {
+  background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.bgOrb {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* Highlight Bar */
+.highlightBar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.highlightItem {
+  flex: 1;
+  padding: 28px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s ease;
+}
+
+.highlightItem:last-child {
+  border-right: none;
+}
+
+.highlightItem:hover {
+  background: rgba(59,130,246,0.05);
+}
+
+.highlightValue {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+}
+
+.highlightLabel {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Features Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Feature Card */
+.featureCard {
+  position: relative;
+  padding: 32px 28px;
+  overflow: hidden;
+}
+
+.featureBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  transition: width 0.5s ease;
+  border-radius: 0 0 0 16px;
+}
+
+.featureCard:hover .featureBar {
+  width: 100%;
+}
+
+.featureIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover .featureIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.featureTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 10px;
+}
+
+.featureDesc {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .highlightBar {
+    flex-wrap: wrap;
+  }
+  .highlightItem {
+    flex: 0 0 50%;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .highlightItem:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .highlightItem {
+    flex: 0 0 100%;
+  }
+}
