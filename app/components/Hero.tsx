@@ -123,7 +123,7 @@ export default function Hero() {
             </span>
           ))}
           {' '}with personalized guidance by{' '}
-          <strong style={{ color: '#f9fafb' }}>Er. Rahul Das</strong>{' '}
+          <strong style={{ color: 'var(--text-primary)' }}>Er. Rahul Das</strong>{' '}
           (B.Tech, NIT Agartala) — for students in Grades 6 to 10.
         </p>
 
@@ -180,11 +180,7 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Scroll indicator */}
-      <a href="#about" className={styles.scrollIndicator}>
-        <span>Scroll</span>
-        <div className={styles.scrollLine} />
-      </a>
+
     </section>
   );
 }

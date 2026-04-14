@@ -1,7 +1,8 @@
 .footer {
-  background: #070b14;
+  background: var(--footer-bg);
   padding: 80px 24px 0;
   position: relative;
+  transition: background 0.35s ease;
 }
 
 .topLine {
@@ -20,7 +21,7 @@
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
   padding-bottom: 60px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--footer-grid-border);
 }
 
 /* Brand */
@@ -63,10 +64,11 @@
 }
 
 .brandDesc {
-  color: #6b7280;
+  color: var(--footer-muted);
   font-size: 0.88rem;
   line-height: 1.8;
   max-width: 320px;
+  transition: color 0.35s ease;
 }
 
 .socialLinks {
@@ -79,8 +81,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--footer-social-bg);
+  border: 1px solid var(--footer-social-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,7 +123,7 @@
 }
 
 .link {
-  color: #6b7280;
+  color: var(--footer-link-color);
   font-size: 0.9rem;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -161,8 +163,9 @@
 }
 
 .muted {
-  color: #6b7280;
+  color: var(--footer-muted);
   font-size: 0.88rem;
+  transition: color 0.35s ease;
 }
 
 /* Bottom */
@@ -176,17 +179,19 @@
 }
 
 .copyright {
-  color: #4b5563;
+  color: var(--footer-copyright);
   font-size: 0.85rem;
+  transition: color 0.35s ease;
 }
 
 .gradesBadge {
-  color: #4b5563;
+  color: var(--footer-copyright);
   font-size: 0.8rem;
   padding: 6px 16px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--footer-grade-badge-border);
   border-radius: 50px;
-  background: rgba(255,255,255,0.02);
+  background: var(--footer-grade-badge-bg);
+  transition: color 0.35s ease, background 0.35s ease, border-color 0.35s ease;
 }
 
 /* Responsive */

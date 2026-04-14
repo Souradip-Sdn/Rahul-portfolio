@@ -1,5 +1,6 @@
 .subjectsSection {
-  background: linear-gradient(180deg, #0f172a 0%, #0a0e1a 100%);
+  background: var(--subjects-bg);
+  transition: background 0.35s ease;
 }
 
 .header {
@@ -21,17 +22,17 @@
 /* Card */
 .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--subject-card-bg);
+  border: 1px solid var(--subject-card-border);
   border-radius: 24px;
   padding: 36px 32px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--subject-card-hover-bg);
   transform: translateY(-8px);
 }
 
@@ -90,13 +91,16 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 12px;
+  color: var(--text-primary);
+  transition: color 0.35s ease;
 }
 
 .subjectDesc {
-  color: #9ca3af;
+  color: var(--subject-desc);
   font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 24px;
+  transition: color 0.35s ease;
 }
 
 /* Topics */

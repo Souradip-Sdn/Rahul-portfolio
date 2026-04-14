@@ -1,5 +1,8 @@
 /* ─── CSS Variables / Design Tokens ─── */
-:root {
+
+/* ── Dark Mode (default) ── */
+:root,
+[data-theme="dark"] {
   --primary: #1e40af;
   --primary-light: #3b82f6;
   --primary-dark: #1e3a8a;
@@ -14,16 +17,220 @@
   --bg-card2: #1a2235;
   --glass: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-hover: rgba(255, 255, 255, 0.08);
 
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
   --text-muted: #6b7280;
+
+  --nav-bg-scrolled: rgba(10, 14, 26, 0.92);
+  --nav-mobile-bg: rgba(10, 14, 26, 0.97);
+  --nav-link-color: #9ca3af;
+  --nav-link-active-bg: rgba(255, 255, 255, 0.08);
+  --hamburger-color: #f9fafb;
+
+  --hero-bg: linear-gradient(135deg, #0a0e1a 0%, #0f172a 50%, #0a0e1a 100%);
+  --hero-badge-bg: rgba(59, 130, 246, 0.12);
+  --hero-badge-border: rgba(59, 130, 246, 0.3);
+  --hero-badge-color: #93c5fd;
+  --hero-card-bg: rgba(255, 255, 255, 0.04);
+  --hero-card-border: rgba(255, 255, 255, 0.1);
+  --hero-card-hover: rgba(255, 255, 255, 0.08);
+  --scroll-color: #6b7280;
+
+  --profile-card-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+  --profile-card-border: rgba(255, 255, 255, 0.08);
+  --nit-badge-bg: rgba(10, 14, 26, 0.9);
+  --nit-badge-border: rgba(59, 130, 246, 0.4);
+  --dot-inactive: rgba(255, 255, 255, 0.25);
+  --achieve-card-bg: rgba(255, 255, 255, 0.04);
+  --achieve-card-border: rgba(255, 255, 255, 0.08);
+
+  --features-bg: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+  --highlight-bar-bg: rgba(255, 255, 255, 0.03);
+  --highlight-bar-border: rgba(255, 255, 255, 0.08);
+  --highlight-item-divider: rgba(255, 255, 255, 0.06);
+  --highlight-label-color: #6b7280;
+
+  --subjects-bg: linear-gradient(180deg, #0f172a 0%, #0a0e1a 100%);
+  --subject-card-bg: rgba(255, 255, 255, 0.03);
+  --subject-card-border: rgba(255, 255, 255, 0.08);
+  --subject-card-hover-bg: rgba(255, 255, 255, 0.06);
+  --subject-desc: #9ca3af;
+
+  --programs-bg: rgba(15, 23, 42, 0.4);
+  --program-card-bg: rgba(15, 23, 42, 0.6);
+  --program-card-border: rgba(255, 255, 255, 0.05);
+  --program-card-hover-border: rgba(255, 255, 255, 0.1);
+  --detail-color: #cbd5e1;
+  --book-badge-bg: rgba(255, 255, 255, 0.05);
+  --book-badge-color: #94a3b8;
+  --book-badge-border: rgba(255, 255, 255, 0.05);
+  --fees-bg: rgba(0, 0, 0, 0.2);
+  --fee-label-color: #94a3b8;
+  --notes-color: #64748b;
+  --select-bg: #1a2235;
+
+  --testimonial-bg: linear-gradient(180deg, #0f172a 0%, #0a0e1a 100%);
+  --testimonial-card-bg: rgba(255, 255, 255, 0.04);
+  --testimonial-card-border: rgba(255, 255, 255, 0.1);
+  --testimonial-text: #d1d5db;
+  --arrow-btn-bg: rgba(255, 255, 255, 0.04);
+  --arrow-btn-border: rgba(255, 255, 255, 0.15);
+  --arrow-btn-color: #9ca3af;
+  --dot-bg: rgba(255, 255, 255, 0.2);
+  --mini-card-bg: rgba(255, 255, 255, 0.03);
+  --mini-card-border: rgba(255, 255, 255, 0.08);
+  --mini-card-hover: rgba(255, 255, 255, 0.07);
+  --mini-name-color: #d1d5db;
+  --author-grade-color: #9ca3af;
+
+  --enroll-bg: linear-gradient(180deg, #0a0e1a 0%, #0d1226 100%);
+  --form-card-bg: rgba(255, 255, 255, 0.04);
+  --form-card-border: rgba(255, 255, 255, 0.1);
+  --form-label-color: #d1d5db;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-color: #f9fafb;
+  --input-placeholder: #6b7280;
+  --contact-panel-bg: rgba(255, 255, 255, 0.04);
+  --contact-panel-border: rgba(255, 255, 255, 0.08);
+  --contact-item-bg: rgba(255, 255, 255, 0.03);
+  --contact-item-border: rgba(255, 255, 255, 0.07);
+  --contact-item-label: #6b7280;
+  --contact-item-value: #d1d5db;
+  --trust-badge-bg: rgba(255, 255, 255, 0.05);
+  --trust-badge-border: rgba(255, 255, 255, 0.1);
+  --trust-badge-color: #9ca3af;
+
+  --footer-bg: #070b14;
+  --footer-grid-border: rgba(255, 255, 255, 0.06);
+  --footer-social-bg: rgba(255, 255, 255, 0.05);
+  --footer-social-border: rgba(255, 255, 255, 0.1);
+  --footer-link-color: #6b7280;
+  --footer-muted: #6b7280;
+  --footer-copyright: #4b5563;
+  --footer-grade-badge-bg: rgba(255, 255, 255, 0.02);
+  --footer-grade-badge-border: rgba(255, 255, 255, 0.06);
+
+  --floating-color: rgba(255, 255, 255, 0.05);
+  --scrollbar-track: var(--bg-dark);
 
   --radius: 16px;
   --radius-sm: 8px;
   --radius-lg: 24px;
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+/* ── Light Mode ── */
+[data-theme="light"] {
+  --bg-dark: #f0f4ff;
+  --bg-card: #ffffff;
+  --bg-card2: #e8eeff;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(99, 102, 241, 0.15);
+  --glass-hover: rgba(59, 130, 246, 0.08);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --nav-bg-scrolled: rgba(248, 250, 255, 0.95);
+  --nav-mobile-bg: rgba(248, 250, 255, 0.98);
+  --nav-link-color: #475569;
+  --nav-link-active-bg: rgba(59, 130, 246, 0.08);
+  --hamburger-color: #0f172a;
+
+  --hero-bg: linear-gradient(135deg, #eef2ff 0%, #f0f9ff 50%, #faf5ff 100%);
+  --hero-badge-bg: rgba(59, 130, 246, 0.1);
+  --hero-badge-border: rgba(59, 130, 246, 0.25);
+  --hero-badge-color: #1d4ed8;
+  --hero-card-bg: rgba(255, 255, 255, 0.85);
+  --hero-card-border: rgba(99, 102, 241, 0.15);
+  --hero-card-hover: rgba(255, 255, 255, 0.95);
+  --scroll-color: #94a3b8;
+
+  --profile-card-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.06));
+  --profile-card-border: rgba(99, 102, 241, 0.15);
+  --nit-badge-bg: rgba(248, 250, 255, 0.95);
+  --nit-badge-border: rgba(59, 130, 246, 0.3);
+  --dot-inactive: rgba(0, 0, 0, 0.15);
+  --achieve-card-bg: rgba(255, 255, 255, 0.7);
+  --achieve-card-border: rgba(99, 102, 241, 0.12);
+
+  --features-bg: linear-gradient(180deg, #f0f4ff 0%, #eef2ff 100%);
+  --highlight-bar-bg: rgba(255, 255, 255, 0.8);
+  --highlight-bar-border: rgba(99, 102, 241, 0.15);
+  --highlight-item-divider: rgba(99, 102, 241, 0.1);
+  --highlight-label-color: #64748b;
+
+  --subjects-bg: linear-gradient(180deg, #eef2ff 0%, #f0f4ff 100%);
+  --subject-card-bg: rgba(255, 255, 255, 0.75);
+  --subject-card-border: rgba(99, 102, 241, 0.12);
+  --subject-card-hover-bg: rgba(255, 255, 255, 0.95);
+  --subject-desc: #475569;
+
+  --programs-bg: rgba(238, 242, 255, 0.6);
+  --program-card-bg: rgba(255, 255, 255, 0.8);
+  --program-card-border: rgba(99, 102, 241, 0.12);
+  --program-card-hover-border: rgba(99, 102, 241, 0.25);
+  --detail-color: #334155;
+  --book-badge-bg: rgba(99, 102, 241, 0.07);
+  --book-badge-color: #4f46e5;
+  --book-badge-border: rgba(99, 102, 241, 0.15);
+  --fees-bg: rgba(241, 245, 255, 0.8);
+  --fee-label-color: #64748b;
+  --notes-color: #94a3b8;
+  --select-bg: #ffffff;
+
+  --testimonial-bg: linear-gradient(180deg, #eef2ff 0%, #f0f4ff 100%);
+  --testimonial-card-bg: rgba(255, 255, 255, 0.85);
+  --testimonial-card-border: rgba(99, 102, 241, 0.15);
+  --testimonial-text: #334155;
+  --arrow-btn-bg: rgba(255, 255, 255, 0.85);
+  --arrow-btn-border: rgba(99, 102, 241, 0.2);
+  --arrow-btn-color: #475569;
+  --dot-bg: rgba(0, 0, 0, 0.15);
+  --mini-card-bg: rgba(255, 255, 255, 0.75);
+  --mini-card-border: rgba(99, 102, 241, 0.12);
+  --mini-card-hover: rgba(255, 255, 255, 0.95);
+  --mini-name-color: #334155;
+  --author-grade-color: #64748b;
+
+  --enroll-bg: linear-gradient(180deg, #f0f4ff 0%, #eef2ff 100%);
+  --form-card-bg: rgba(255, 255, 255, 0.9);
+  --form-card-border: rgba(99, 102, 241, 0.15);
+  --form-label-color: #334155;
+  --input-bg: rgba(248, 250, 255, 0.9);
+  --input-border: rgba(99, 102, 241, 0.2);
+  --input-color: #0f172a;
+  --input-placeholder: #94a3b8;
+  --contact-panel-bg: rgba(255, 255, 255, 0.85);
+  --contact-panel-border: rgba(99, 102, 241, 0.12);
+  --contact-item-bg: rgba(248, 250, 255, 0.8);
+  --contact-item-border: rgba(99, 102, 241, 0.1);
+  --contact-item-label: #64748b;
+  --contact-item-value: #1e293b;
+  --trust-badge-bg: rgba(255, 255, 255, 0.75);
+  --trust-badge-border: rgba(99, 102, 241, 0.2);
+  --trust-badge-color: #475569;
+
+  --footer-bg: #1e293b;
+  --footer-grid-border: rgba(255, 255, 255, 0.08);
+  --footer-social-bg: rgba(255, 255, 255, 0.08);
+  --footer-social-border: rgba(255, 255, 255, 0.12);
+  --footer-link-color: #94a3b8;
+  --footer-muted: #94a3b8;
+  --footer-copyright: #64748b;
+  --footer-grade-badge-bg: rgba(255, 255, 255, 0.05);
+  --footer-grade-badge-border: rgba(255, 255, 255, 0.08);
+
+  --floating-color: rgba(99, 102, 241, 0.06);
+  --scrollbar-track: #e2e8f0;
+
+  --shadow: 0 20px 60px rgba(99, 102, 241, 0.12);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.2);
 }
 
 /* ─── Reset ─── */
@@ -36,7 +243,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  /* Prevent elastic bounce on overscroll (keeps things feeling tight) */
+  overscroll-behavior: none;
 }
+
 
 body {
   font-family: 'Inter', sans-serif;
@@ -45,6 +256,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/></svg>") 3 20, auto;
 }
 
@@ -165,7 +377,7 @@ img {
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-hover);
   border-color: rgba(59, 130, 246, 0.4);
   transform: translateY(-6px);
   box-shadow: var(--shadow-glow);
@@ -286,7 +498,7 @@ img {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--primary);

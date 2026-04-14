@@ -7,12 +7,13 @@
 
 /* Profile Card */
 .profileCard {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--profile-card-bg);
+  border: 1px solid var(--profile-card-border);
   border-radius: 28px;
   padding: 40px 32px;
   position: relative;
   overflow: hidden;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .profileCard::before {
@@ -80,7 +81,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--dot-inactive);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -126,13 +127,8 @@
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* NIT Badge */
@@ -143,14 +139,15 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(10, 14, 26, 0.9);
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: var(--nit-badge-bg);
+  border: 1px solid var(--nit-badge-border);
   border-radius: 12px;
   padding: 8px 14px;
   backdrop-filter: blur(20px);
   font-size: 0.85rem;
   white-space: nowrap;
   z-index: 5;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 @media (max-width: 480px) {
@@ -177,8 +174,9 @@
 }
 
 .nitDeg {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.72rem;
+  transition: color 0.35s ease;
 }
 
 /* Profile Info */
@@ -190,8 +188,9 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
-  color: #f9fafb;
+  color: var(--text-primary);
   margin-bottom: 4px;
+  transition: color 0.35s ease;
 }
 
 .profileTitle {
@@ -202,10 +201,11 @@
 }
 
 .profileDesc {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.7;
   margin-bottom: 20px;
+  transition: color 0.35s ease;
 }
 
 .contactChips {
@@ -250,10 +250,11 @@
 
 /* Right Content */
 .bodyText {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.9;
   margin-bottom: 20px;
+  transition: color 0.35s ease;
 }
 
 /* Achievements */
@@ -268,8 +269,8 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--achieve-card-bg);
+  border: 1px solid var(--achieve-card-border);
   border-radius: 14px;
   padding: 16px;
   transition: all 0.3s ease;
@@ -288,15 +289,17 @@
 
 .achieveTitle {
   font-weight: 700;
-  color: #f9fafb;
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin-bottom: 2px;
+  transition: color 0.35s ease;
 }
 
 .achieveDetail {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.78rem;
   line-height: 1.5;
+  transition: color 0.35s ease;
 }
 
 /* Responsive */

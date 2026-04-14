@@ -1,7 +1,8 @@
 .featuresSection {
-  background: linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%);
+  background: var(--features-bg);
   position: relative;
   overflow: hidden;
+  transition: background 0.35s ease;
 }
 
 .bgOrb {
@@ -29,18 +30,19 @@
   display: flex;
   justify-content: center;
   gap: 0;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--highlight-bar-bg);
+  border: 1px solid var(--highlight-bar-border);
   border-radius: 20px;
   margin-bottom: 60px;
   overflow: hidden;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .highlightItem {
   flex: 1;
   padding: 28px 20px;
   text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid var(--highlight-item-divider);
   transition: background 0.3s ease;
 }
 
@@ -64,9 +66,10 @@
 }
 
 .highlightLabel {
-  color: #6b7280;
+  color: var(--highlight-label-color);
   font-size: 0.85rem;
   font-weight: 500;
+  transition: color 0.35s ease;
 }
 
 /* Features Grid */
@@ -118,14 +121,16 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #f9fafb;
+  color: var(--text-primary);
   margin-bottom: 10px;
+  transition: color 0.35s ease;
 }
 
 .featureDesc {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.75;
+  transition: color 0.35s ease;
 }
 
 @media (max-width: 900px) {
@@ -137,7 +142,7 @@
   }
   .highlightItem {
     flex: 0 0 50%;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--highlight-item-divider);
   }
   .highlightItem:nth-child(2) {
     border-right: none;

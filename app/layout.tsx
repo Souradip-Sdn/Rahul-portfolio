@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import FloatingElements from "./components/FloatingElements";
+import ScrollButton from "./components/ScrollButton";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Rahul Classes | Expert Tuition for Grades 6–10",
@@ -30,8 +32,11 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <FloatingElements />
-        {children}
+        <ThemeProvider>
+          <FloatingElements />
+          <ScrollButton />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

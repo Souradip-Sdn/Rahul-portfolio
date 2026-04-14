@@ -74,9 +74,7 @@ export default function Subjects() {
           <h2 className="section-title">
             Subjects We <span className="gradient-text">Specialize In</span>
           </h2>
-          <p className="section-subtitle">
-            Comprehensive coaching across four core subjects — designed to build mastery from the ground up.
-          </p>
+
         </div>
 
         <div className={styles.grid}>
@@ -119,7 +117,7 @@ export default function Subjects() {
               <a href="#contact" className={styles.learnMore} style={{ color: subject.color }} id={`enroll-${subject.id}`}>
                 Enroll for {subject.title}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
             </div>

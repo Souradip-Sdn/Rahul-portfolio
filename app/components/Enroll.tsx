@@ -51,7 +51,7 @@ export default function Enroll() {
   };
 
   const contactItems = [
-    { icon: '📱', label: 'Phone / WhatsApp', value: '+91 8787692565', link: 'https://wa.me/918787692565' },
+    // { icon: '📱', label: 'Phone / WhatsApp', value: '+91 8787692565', link: 'https://wa.me/918787692565' },
     { icon: '📍', label: 'Location', value: 'Available Anywhere — Online & Offline', link: null },
     { icon: '🎓', label: 'Qualification', value: 'B.Tech, NIT Agartala', link: null },
     { icon: '📚', label: 'Classes', value: 'Grades 6 to 10 — Maths, Physics, Chemistry, Biology', link: null },

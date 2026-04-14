@@ -4,24 +4,25 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0; /* Keep it above the base background but behind content */
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
 .item {
   position: absolute;
-  color: rgba(255, 255, 255, 0.05);
+  color: var(--floating-color);
   font-family: 'Poppins', 'Times New Roman', math, sans-serif;
   user-select: none;
   animation: float-around 30s ease-in-out infinite alternate;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.35s ease;
 }
 
 .emoji {
-  opacity: 0.15; /* Emojis are inherently colorful, so reduce their opacity individually to blend in */
+  opacity: 0.15;
   filter: grayscale(100%) contrast(200%);
 }
 

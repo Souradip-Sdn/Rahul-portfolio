@@ -1,7 +1,8 @@
 .section {
-  background: linear-gradient(180deg, #0a0e1a 0%, #0d1226 100%);
+  background: var(--enroll-bg);
   position: relative;
   overflow: hidden;
+  transition: background 0.35s ease;
 }
 
 .bgGlow1 {
@@ -41,12 +42,13 @@
 
 /* Form Card */
 .formCard {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--form-card-bg);
+  border: 1px solid var(--form-card-border);
   border-radius: 28px;
   padding: 48px 44px;
   position: relative;
   overflow: hidden;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .formCard::before {
@@ -63,14 +65,16 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.4rem;
   font-weight: 800;
-  color: #f9fafb;
+  color: var(--text-primary);
   margin-bottom: 6px;
+  transition: color 0.35s ease;
 }
 
 .formSubtitle {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 32px;
+  transition: color 0.35s ease;
 }
 
 .formRow {
@@ -89,16 +93,17 @@
 .label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #d1d5db;
+  color: var(--form-label-color);
   letter-spacing: 0.3px;
+  transition: color 0.35s ease;
 }
 
 .input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 12px;
   padding: 12px 16px;
-  color: #f9fafb;
+  color: var(--input-color);
   font-size: 0.95rem;
   font-family: 'Inter', sans-serif;
   outline: none;
@@ -107,7 +112,7 @@
 }
 
 .input::placeholder {
-  color: #6b7280;
+  color: var(--input-placeholder);
 }
 
 .input:focus {
@@ -117,8 +122,8 @@
 }
 
 .input option {
-  background: #1a2235;
-  color: #f9fafb;
+  background: var(--select-bg);
+  color: var(--input-color);
 }
 
 .textarea {
@@ -177,15 +182,17 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
-  color: #f9fafb;
+  color: var(--text-primary);
   margin-bottom: 12px;
+  transition: color 0.35s ease;
 }
 
 .successText {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 28px;
+  transition: color 0.35s ease;
 }
 
 /* Contact Panel */
@@ -200,9 +207,10 @@
   align-items: center;
   gap: 16px;
   padding: 24px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--contact-panel-bg);
+  border: 1px solid var(--contact-panel-border);
   border-radius: 20px;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .contactAvatar {
@@ -223,20 +231,23 @@
 .contactName {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
-  color: #f9fafb;
+  color: var(--text-primary);
   font-size: 1.1rem;
+  transition: color 0.35s ease;
 }
 
 .contactQual {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.82rem;
   margin-top: 3px;
+  transition: color 0.35s ease;
 }
 
 .contactDesc {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.7;
+  transition: color 0.35s ease;
 }
 
 .contactItem {
@@ -244,14 +255,14 @@
   align-items: flex-start;
   gap: 14px;
   padding: 16px 20px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--contact-item-bg);
+  border: 1px solid var(--contact-item-border);
   border-radius: 14px;
-  transition: all 0.3s ease;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .contactItem:hover {
-  background: rgba(255,255,255,0.06);
+  background: var(--contact-panel-bg);
   border-color: rgba(59,130,246,0.25);
 }
 
@@ -263,17 +274,19 @@
 
 .contactItemLabel {
   font-size: 0.78rem;
-  color: #6b7280;
+  color: var(--contact-item-label);
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 3px;
+  transition: color 0.35s ease;
 }
 
 .contactItemValue {
-  color: #d1d5db;
+  color: var(--contact-item-value);
   font-size: 0.9rem;
   font-weight: 500;
+  transition: color 0.35s ease;
 }
 
 .whatsappBtn {
@@ -296,12 +309,13 @@
 
 .badge {
   padding: 6px 14px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--trust-badge-bg);
+  border: 1px solid var(--trust-badge-border);
   border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #9ca3af;
+  color: var(--trust-badge-color);
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
 }
 
 /* Responsive */

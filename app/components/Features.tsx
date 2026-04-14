@@ -80,10 +80,6 @@ export default function Features() {
           <h2 className="section-title">
             Everything You Need to <span className="gradient-text">Excel</span>
           </h2>
-          <p className="section-subtitle">
-            We go beyond textbooks — our teaching method is built to develop critical thinking,
-            exam readiness, and genuine love for learning.
-          </p>
         </div>
 
         {/* Highlight bar */}

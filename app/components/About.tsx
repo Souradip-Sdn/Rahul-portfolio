@@ -63,7 +63,7 @@ export default function About() {
 
   return (
     <section className="section" id="about" ref={sectionRef}
-      style={{ background: 'linear-gradient(180deg, #0a0e1a 0%, #0f172a 100%)' }}>
+      style={{ background: 'linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card2) 100%)' }}>
       <div className="container">
         <div className={styles.grid}>
           {/* Left: Profile card */}
@@ -146,15 +146,15 @@ export default function About() {
             </h2>
             <p className={styles.bodyText}>
               Er. Rahul Das is an accomplished educator and engineer from the prestigious
-              <strong style={{ color: '#93c5fd' }}> National Institute of Technology, Agartala</strong>.
+              <strong style={{ color: '#3b82f6' }}> National Institute of Technology, Agartala</strong>.
               With a deep passion for teaching, he has been guiding students from Grades 6 to 10
               in mastering core science and math subjects.
             </p>
-            <blockquote style={{ borderLeft: '4px solid #3b82f6', paddingLeft: '16px', margin: '24px 0', fontStyle: 'italic', color: '#e2e8f0', fontSize: '1.1rem' }}>
+            <blockquote style={{ borderLeft: '4px solid #3b82f6', paddingLeft: '16px', margin: '24px 0', fontStyle: 'italic', color: 'var(--text-primary)', fontSize: '1.1rem' }}>
               "Every child can learn — when guided with patience and belief."
             </blockquote>
             <p className={styles.bodyText}>
-              His teaching method is built on three core pillars: <strong style={{ color: '#a78bfa' }}>Personal Attention</strong>, <strong style={{ color: '#60a5fa' }}>Concept Clarity</strong>, and <strong style={{ color: '#34d399' }}>Result-Focused Teaching</strong> — ensuring every student progresses at their own pace and achieves their academic goals.
+              His teaching method is built on three core pillars: <strong style={{ color: '#7c3aed' }}>Personal Attention</strong>, <strong style={{ color: '#2563eb' }}>Concept Clarity</strong>, and <strong style={{ color: '#059669' }}>Result-Focused Teaching</strong> — ensuring every student progresses at their own pace and achieves their academic goals.
             </p>
 
             <div className={styles.achievements}>

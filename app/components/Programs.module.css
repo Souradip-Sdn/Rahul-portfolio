@@ -1,8 +1,10 @@
+/* ─── Section wrapper ─────────────────────────────────────────────────────── */
 .programsSection {
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-  background: rgba(15, 23, 42, 0.4);
+  background: var(--programs-bg);
+  transition: background 0.35s ease;
 }
 
 .bgGlow {
@@ -24,31 +26,25 @@
   z-index: 1;
 }
 
+/* ─── 3-col grid ─────────────────────────────────────────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1px); /* will override in media queries */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   position: relative;
   z-index: 1;
+  align-items: start;
 }
 
+/* ─── Base card ──────────────────────────────────────────────────────────── */
 .programCard {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 32px;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.programCard:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .cardGlow {
@@ -56,11 +52,184 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, currentColor, transparent);
   opacity: 0.5;
 }
 
+/* ─── Standard card (Foundation) ────────────────────────────────────────── */
+.standardCard {
+  background: var(--program-card-bg);
+  border: 1px solid var(--program-card-border);
+}
+
+.standardCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.stdBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-bottom: 16px;
+  width: fit-content;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.stdTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  transition: color 0.35s ease;
+}
+
+.stdSubtitle {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  transition: color 0.35s ease;
+}
+
+/* ─── Check list (shared) ────────────────────────────────────────────────── */
+.includesLabel,
+.everythingLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  transition: color 0.35s ease;
+}
+
+.everythingLabel {
+  color: #ffffff;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--detail-color);
+  transition: color 0.35s ease;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Books row */
+.stdBooks,
+.premiumBooks {
+  margin-bottom: 20px;
+}
+
+.booksLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.35s ease;
+}
+
+.booksList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bookBadge {
+  background: var(--book-badge-bg);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  color: var(--book-badge-color);
+  border: 1px solid var(--book-badge-border);
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* ─── Fees (shared) ──────────────────────────────────────────────────────── */
+.feesSection {
+  background: var(--fees-bg);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: auto;
+  transition: background 0.35s ease;
+}
+
+.feeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feeItem:last-child {
+  margin-bottom: 0;
+}
+
+.feeLabel {
+  font-size: 0.88rem;
+  color: var(--fee-label-color);
+  transition: color 0.35s ease;
+}
+
+.feeValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.35s ease;
+}
+
+.feeSuffix {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--notes-color);
+  transition: color 0.35s ease;
+}
+
+.notes {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--notes-color);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  transition: color 0.35s ease;
+}
+
+/* ─── Standard card legacy styles (Board Excellence uses these) ──────────── */
 .highlight {
   font-size: 0.8rem;
   font-weight: 600;
@@ -71,13 +240,11 @@
 }
 
 .title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #f8fafc;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
   margin-bottom: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  transition: color 0.35s ease;
 }
 
 .detailsList {
@@ -93,7 +260,8 @@
   gap: 12px;
   margin-bottom: 16px;
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: var(--detail-color);
+  transition: color 0.35s ease;
 }
 
 .detailIcon {
@@ -101,69 +269,159 @@
   margin-top: 2px;
 }
 
-.booksList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
+/* ─── PREMIUM CARD ────────────────────────────────────────────────────────── */
+.premiumCard {
+  background: linear-gradient(160deg, #0d1b3e 0%, #111f4d 40%, #0a1530 100%);
+  border: 1.5px solid rgba(99, 162, 255, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(99, 162, 255, 0.10),
+    0 24px 64px rgba(8, 20, 60, 0.65),
+    0 0 48px rgba(59, 130, 246, 0.10);
+  transform: translateY(-6px);
+  color: #e2eaf8;
+  /* KEY FIX: allow ribbon to overflow the card boundary */
+  overflow: visible;
 }
 
-.bookBadge {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  color: #94a3b8;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.premiumCard:hover {
+  transform: translateY(-14px);
+  box-shadow:
+    0 0 0 1px rgba(99, 162, 255, 0.25),
+    0 32px 80px rgba(8, 20, 60, 0.8),
+    0 0 64px rgba(59, 130, 246, 0.18);
+  border-color: rgba(99, 162, 255, 0.55);
 }
 
-.feesSection {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: auto;
-}
-
-.feeItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.feeItem:last-child {
-  margin-bottom: 0;
-}
-
-.feeLabel {
-  font-size: 0.9rem;
-  color: #94a3b8;
-}
-
-.feeValue {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f8fafc;
-}
-
-.feeSuffix {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #64748b;
-}
-
-.notes {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: #64748b;
-  font-style: italic;
+/* ── "Most Popular" corner ribbon ── */
+/* ── "Most Popular" corner ribbon ── */
+.mostPopularCorner {
+  position: absolute;
+  top: 28px;
+  right: -36px;
+  background: linear-gradient(135deg, #92650a, #c9920d, #f0c040, #d4a017, #92650a);
+  color: #1a0e00;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 8px 0;
+  width: 160px;
   text-align: center;
-  line-height: 1.4;
+  transform: rotate(45deg);
+  box-shadow:
+    0 2px 10px rgba(180, 130, 10, 0.6),
+    inset 0 1px 0 rgba(255, 235, 120, 0.5),
+    inset 0 -1px 0 rgba(100, 60, 0, 0.3);
+  white-space: nowrap;
+  z-index: 10;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 640px) {
+  .mostPopularCorner {
+    top: 24px;
+    right: -32px;
+    font-size: 0.6rem;
+    padding: 7px 0;
+    width: 148px;
+  }
+}
+
+/* ── "Advanced" trophy pill ── */
+.advancedPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e8b923;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.premiumTitle {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 16px rgba(99, 162, 255, 0.25);
+}
+
+.premiumSubtitle {
+  font-size: 0.9rem;
+  color: rgba(180, 208, 255, 0.8);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+/* Premium check list */
+.premiumCheckItem {
+  color: #c8deff !important;
+}
+
+.premiumCheckIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #d4a017;
+  background: rgba(212, 160, 23, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #e8b923;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Premium book badges */
+.premiumBookBadge {
+  background: rgba(212, 160, 23, 0.1) !important;
+  color: #e8b923 !important;
+  border-color: rgba(212, 160, 23, 0.3) !important;
+}
+
+/* Premium fees */
+.premiumFees {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(99, 162, 255, 0.2);
+}
+
+.premiumFeeLabel {
+  color: #93c5fd !important;
+}
+
+.premiumFeeValue {
+  font-size: 1.5rem !important;
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premiumNotes {
+  color: rgba(147, 197, 253, 0.6) !important;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .premiumCard {
+    grid-column: 1 / -1;
+    transform: none;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .premiumCard:hover {
+    transform: translateY(-8px);
   }
 }
 
@@ -171,10 +429,26 @@
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .premiumCard {
+    max-width: 100%;
+  }
+
+  .stdTitle,
+  .premiumTitle,
   .title {
     font-size: 1.5rem;
   }
+
   .programCard {
     padding: 24px;
+  }
+
+  .mostPopularCorner {
+    top: 16px;
+    right: -28px;
+    font-size: 0.65rem;
+    padding: 5px 40px;
+    width: 128px;
   }
 }
