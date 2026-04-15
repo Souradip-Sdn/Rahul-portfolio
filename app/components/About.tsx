@@ -11,8 +11,8 @@ const achievements = [
   { icon: '⭐', title: '95% Success Rate', detail: 'Students achieving target scores' },
 ];
 
-// Add your 3 photo paths here
-const photos = ['/1.jpeg', '/2.jpeg', '/3.jpeg'];
+// Updated: Removed the 2nd photo path '/3.jpeg'
+const photos = ['/1.jpeg'];
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,6 +24,9 @@ export default function About() {
   }, []);
 
   const startTimer = useCallback(() => {
+    // Only start timer if there are multiple photos
+    if (photos.length <= 1) return;
+
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % photos.length);
@@ -92,17 +95,19 @@ export default function About() {
                     </div>
                   </div>
 
-                  {/* Dots */}
-                  <div className={styles.carouselDots}>
-                    {photos.map((_, i) => (
-                      <button
-                        key={i}
-                        className={`${styles.dot} ${i === current ? styles.dotActive : ''}`}
-                        onClick={() => handleDotClick(i)}
-                        aria-label={`Go to photo ${i + 1}`}
-                      />
-                    ))}
-                  </div>
+                  {/* Dots - Only show if there are multiple photos */}
+                  {photos.length > 1 && (
+                    <div className={styles.carouselDots}>
+                      {photos.map((_, i) => (
+                        <button
+                          key={i}
+                          className={`${styles.dot} ${i === current ? styles.dotActive : ''}`}
+                          onClick={() => handleDotClick(i)}
+                          aria-label={`Go to photo ${i + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
 
                   <div className={styles.ringOuter} />
                   <div className={styles.ringInner} />
@@ -127,7 +132,7 @@ export default function About() {
 
                 <div className={styles.contactChips}>
                   <a href="https://wa.me/918787692565" target="_blank" rel="noreferrer" className={styles.whatsapp}>
-                    <span>📱</span> +91 8787692565
+                    <span>📱</span>
                   </a>
                   <div className={styles.locationChip}>
                     <span>📍</span> Available Anywhere

@@ -3,20 +3,32 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './Enroll.module.css';
 
-const subjects = ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Multiple Subjects'];
-const grades = ['Grade 6', 'Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'];
+// ✅ Paste your NEW Google Apps Script Web App URL here (after redeploying)
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzS9PQEEEPHtichuayDS8IYN47mSLOzs-yyoem5MxJpGoFWRRboAhTKZUrz-5ckX94G/exec';
 
 interface FormData {
   name: string;
   phone: string;
-  grade: string;
-  subject: string;
+  batch: string;
   message: string;
 }
 
+const batches = [
+  'Standard Course - Class 6 (Science & Maths)',
+  'Standard Course - Class 7 (Science & Maths)',
+  'Standard Course - Class 8 (Science & Maths)',
+  'Premium Course - Science & Maths + Olympiad',
+  'Board Excellence - Class 9 Maths',
+  'Board Excellence - Class 9 Science',
+  'Board Excellence - Class 9 Maths & Science',
+  'Board Excellence - Class 10 Maths',
+  'Board Excellence - Class 10 Science',
+  'Board Excellence - Class 10 Maths & Science'
+];
+
 export default function Enroll() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [form, setForm] = useState<FormData>({ name: '', phone: '', grade: '', subject: '', message: '' });
+  const [form, setForm] = useState<FormData>({ name: '', phone: '', batch: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -41,13 +53,26 @@ export default function Enroll() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        // FIX: Change to text/plain to bypass CORS preflight requests
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(form),
+      });
+    } catch (err) {
+      console.error('Sheet submission error:', err);
+    } finally {
       setLoading(false);
       setSubmitted(true);
-    }, 1500);
+    }
   };
 
   const contactItems = [
@@ -87,7 +112,7 @@ export default function Enroll() {
                 </p>
                 <button
                   className="btn btn-outline"
-                  onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', grade: '', subject: '', message: '' }); }}
+                  onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', batch: '', message: '' }); }}
                   id="submit-another-btn"
                 >
                   Submit Another Request
@@ -128,18 +153,11 @@ export default function Enroll() {
                 </div>
 
                 <div className={styles.formRow}>
-                  <div className={styles.field}>
-                    <label className={styles.label} htmlFor="grade">Grade / Class *</label>
-                    <select id="grade" name="grade" className={styles.input} value={form.grade} onChange={handleChange} required>
-                      <option value="">Select Grade</option>
-                      {grades.map((g) => <option key={g} value={g}>{g}</option>)}
-                    </select>
-                  </div>
-                  <div className={styles.field}>
-                    <label className={styles.label} htmlFor="subject">Subject *</label>
-                    <select id="subject" name="subject" className={styles.input} value={form.subject} onChange={handleChange} required>
-                      <option value="">Select Subject</option>
-                      {subjects.map((s) => <option key={s} value={s}>{s}</option>)}
+                  <div className={styles.field} style={{ gridColumn: '1 / -1' }}>
+                    <label className={styles.label} htmlFor="batch">Select Batch *</label>
+                    <select id="batch" name="batch" className={styles.input} value={form.batch} onChange={handleChange} required>
+                      <option value="">Select a batch...</option>
+                      {batches.map((b) => <option key={b} value={b}>{b}</option>)}
                     </select>
                   </div>
                 </div>

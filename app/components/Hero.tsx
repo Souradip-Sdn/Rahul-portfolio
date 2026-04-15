@@ -124,7 +124,7 @@ export default function Hero() {
           ))}
           {' '}with personalized guidance by{' '}
           <strong style={{ color: 'var(--text-primary)' }}>Er. Rahul Das</strong>{' '}
-          (B.Tech, NIT Agartala) — for students in Grades 6 to 10.
+          (B.Tech, NIT Agartala).
         </p>
 
         <div className={styles.ctas}>

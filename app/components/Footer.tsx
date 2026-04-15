@@ -77,10 +77,10 @@ export default function Footer() {
           <div className={styles.column}>
             <h4 className={styles.colTitle}>Contact</h4>
             <div className={styles.contactList}>
-              <div className={styles.contactRow}>
+              {/* <div className={styles.contactRow}>
                 <span>📱</span>
                 <a href="tel:+918787692565" className={styles.link}>+91 8787692565</a>
-              </div>
+              </div> */}
               <div className={styles.contactRow}>
                 <span>💬</span>
                 <a href="https://wa.me/918787692565" target="_blank" rel="noreferrer" className={styles.link}>WhatsApp</a>

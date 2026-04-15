@@ -1622,6 +1622,17 @@
   opacity: 0.5;
 }
 
+/* Colored top stripe (like the reference screenshot) */
+.Programs_topStripe__VkPEH {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+  z-index: 2;
+}
+
 /* ─── Standard card (Foundation) ────────────────────────────────────────── */
 .Programs_standardCard__PwEPk {
   background: var(--program-card-bg);
@@ -1845,8 +1856,9 @@
     0 0 48px rgba(59, 130, 246, 0.10);
   transform: translateY(-6px);
   color: #e2eaf8;
-  /* KEY FIX: allow ribbon to overflow the card boundary */
   overflow: visible;
+  padding-top: 40px;
+  /* room for the top badge */
 }
 
 .Programs_premiumCard__CwAf2:hover {
@@ -1858,62 +1870,58 @@
   border-color: rgba(99, 162, 255, 0.55);
 }
 
-/* ── "Most Popular" corner ribbon ── */
-/* ── "Most Popular" corner ribbon ── */
-.Programs_mostPopularCorner__wa18w {
+/* ── "Most Enrolled" top-center pill ── */
+.Programs_mostEnrolledBadge__uO9b6 {
   position: absolute;
-  top: 28px;
-  right: -36px;
-  background: linear-gradient(135deg, #92650a, #c9920d, #f0c040, #d4a017, #92650a);
-  color: #1a0e00;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #ff6b35, #ff4757);
+  color: #fff;
   font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 8px 0;
-  width: 160px;
-  text-align: center;
-  transform: rotate(45deg);
-  box-shadow:
-    0 2px 10px rgba(180, 130, 10, 0.6),
-    inset 0 1px 0 rgba(255, 235, 120, 0.5),
-    inset 0 -1px 0 rgba(100, 60, 0, 0.3);
+  padding: 7px 22px;
+  border-radius: 50px;
   white-space: nowrap;
   z-index: 10;
+  box-shadow: 0 4px 16px rgba(255, 71, 87, 0.45);
 }
 
-@media (max-width: 640px) {
-  .Programs_mostPopularCorner__wa18w {
-    top: 24px;
-    right: -32px;
-    font-size: 0.6rem;
-    padding: 7px 0;
-    width: 148px;
-  }
-}
-
-/* ── "Advanced" trophy pill ── */
-.Programs_advancedPill__8uRl8 {
-  display: inline-flex;
+/* ── Icon + "Popular Choice" row ── */
+.Programs_premiumTopRow__5xXfs {
+  display: flex;
   align-items: center;
-  gap: 7px;
-  background: rgba(212, 160, 23, 0.12);
-  border: 1px solid rgba(212, 160, 23, 0.4);
-  border-radius: 50px;
-  padding: 6px 16px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #e8b923;
-  margin-bottom: 16px;
-  width: -moz-fit-content;
-  width: fit-content;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.Programs_premiumIconBox__d9uVk {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.45);
+  flex-shrink: 0;
+}
+
+.Programs_popularChoice__MzH4v {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #22d3ee;
 }
 
 .Programs_premiumTitle__kq3zl {
   font-size: 1.9rem;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-shadow: 0 2px 16px rgba(99, 162, 255, 0.25);
 }
 
@@ -1924,54 +1932,145 @@
   margin-bottom: 22px;
 }
 
-/* Premium check list */
-.Programs_premiumCheckItem__chb1V {
-  color: #c8deff !important;
-}
-
-.Programs_premiumCheckIcon__zUGgS {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #d4a017;
-  background: rgba(212, 160, 23, 0.15);
+/* ── Star bullet list ── */
+.Programs_starList__xKyn3 {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-weight: 900;
-  color: #e8b923;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1;
+}
+
+.Programs_starItem__XmDLd {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #c8deff;
+}
+
+.Programs_starIcon___35ZT {
+  color: #fbbf24;
+  font-size: 1rem;
   flex-shrink: 0;
-  margin-top: 1px;
+  line-height: 1.45;
 }
 
-/* Premium book badges */
-.Programs_premiumBookBadge__V9kKF {
-  background: rgba(212, 160, 23, 0.1) !important;
-  color: #e8b923 !important;
-  border-color: rgba(212, 160, 23, 0.3) !important;
-}
-
-/* Premium fees */
-.Programs_premiumFees__e12Af {
-  background: rgba(0, 0, 0, 0.3) !important;
+/* ── Fee row above the enroll button ── */
+.Programs_premiumFeeRow__lODuk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(99, 162, 255, 0.2);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
 }
 
-.Programs_premiumFeeLabel__Qu9vJ {
-  color: #93c5fd !important;
+.Programs_premiumFeeRowLabel__vfakj {
+  font-size: 0.85rem;
+  color: #93c5fd;
 }
 
-.Programs_premiumFeeValue__ijr7R {
-  font-size: 1.5rem !important;
+.Programs_premiumFeeRowValue__4DHlW {
+  font-size: 0.8rem;
+  font-weight: 800;
   background: linear-gradient(135deg, #60a5fa, #a5b4fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.Programs_premiumNotes__dyGsZ {
-  color: rgba(147, 197, 253, 0.6) !important;
+.Programs_premiumFeeRowSuffix__mAKr3 {
+  font-size: 0.5rem;
+  color: rgba(147, 197, 253, 0.6);
+}
+
+/* ── "Enroll Today" gradient button / anchor ── */
+.Programs_enrollButton__wBqQj {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.Programs_enrollButton__wBqQj:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.55);
+}
+
+/* Blue variant for Standard card */
+.Programs_enrollButtonBlue__qt7Ae {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+}
+
+.Programs_enrollButtonBlue__qt7Ae:hover:not(:disabled) {
+  box-shadow: 0 8px 28px rgba(59, 130, 246, 0.55);
+}
+
+/* Purple variant for Board Excellence card */
+.Programs_enrollButtonPurple__u8KeP {
+  background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+}
+
+.Programs_enrollButtonPurple__u8KeP:hover:not(:disabled) {
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.55);
+}
+
+.Programs_enrollButton__wBqQj:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── Enroll section (dropdown + button) ────────────────────────────────── */
+.Programs_enrollSection__PqLAL {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Programs_batchSelect__KJPF9 {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 50px;
+  border: 1.5px solid;
+  background: var(--fees-bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.Programs_batchSelect__KJPF9:focus {
+  box-shadow: 0 0 0 3px rgba(99,162,255,0.15);
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
